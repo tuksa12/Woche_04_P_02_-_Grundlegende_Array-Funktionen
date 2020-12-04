@@ -15,18 +15,18 @@ public class Arrays {
     }
 
     public static void minUndMax(int[] feld) {
-        int min = 0;
-        int max = 0;
-        int x = 0;
-        while (x< feld.length){
-            if (feld[x]<feld[x+1]){
-                min = feld[x];
-                max = feld[x+1];
-            }else if (feld[x]>feld[x+1]){
-                min = feld[x+1];
-                max = feld [x];
-            }
-            x++;}
+        if (feld.length == 0) {
+            return;
+        }
+        int min = feld[0];
+        int max = feld[0];
+
+        for (int i = 0; i < feld.length; i++) {
+            if (feld[i] < min)
+                min = feld[i];
+            if (feld[i] > max)
+                max = feld[i];
+        }
         write("Minimum = " + min + ", Maximum = " + max);
     }
 
